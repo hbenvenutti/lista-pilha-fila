@@ -1,4 +1,6 @@
-package list;
+package list.lists;
+
+import static list.io.Output.print;
 
 public class Stack<T> {
   private Node<T> head;
@@ -24,18 +26,23 @@ public class Stack<T> {
     previous.setNext(null);
     this.tail = previous;
 
+    list();
     return value;
   }
 
   public void list() {
     Node<T> node = head;
 
+    print("stack: \n[");
+
     while(true) {
-      System.out.println(node.getValue());
+      print("\t" + node.getValue().toString() + ",");
 
       if (node.getNext() == null) break;
 
       node = node.getNext();
     }
+
+    print("]");
   }
 }

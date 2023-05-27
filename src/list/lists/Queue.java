@@ -1,4 +1,6 @@
-package list;
+package list.lists;
+
+import static list.io.Output.print;
 
 public class Queue<T> {
   private Node<T> head;
@@ -24,7 +26,25 @@ public class Queue<T> {
     if (next != null) next.setPrevious(null);
 
     this.head = next;
+
+    list();
     
     return value;
+  }
+
+  public void list() {
+    Node<T> node = head;
+
+    print("queue: \n[");
+
+    while(true) {
+      print("\t" + node.getValue().toString() + ",");
+
+      if (node.getNext() == null) break;
+
+      node = node.getNext();
+    }
+
+    print("]");
   }
 }

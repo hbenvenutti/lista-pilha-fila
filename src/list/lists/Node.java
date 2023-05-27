@@ -1,4 +1,4 @@
-package list;
+package list.lists;
 
 public class Node<T> {
   private T value;
